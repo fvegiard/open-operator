@@ -20,6 +20,7 @@ For a detailed breakdown of tasks and capabilities, see [capabilities.md](capabi
 
 - [WebArena](benchmarks/webarena.md) is a realistic web environment for building autonomous agents.
 - [OSWorld](benchmarks/osworld.md) is a scalable, real computer environment for multimodal agents that supports task setup, execution-based evaluation, and interactive learning across operating systems.
+- [ClawBench](benchmarks/clawbench.md) evaluates browser agents on 283 everyday tasks across live websites, with isolated runs, request interception, and five synchronized trace layers.
 
 ## Benchmark Results Summary
 
@@ -43,6 +44,7 @@ Latest benchmark results across major evaluation frameworks as of January 2025. 
 For detailed results and analysis, see the individual benchmark pages:
 - [WebArena Benchmark](benchmarks/webarena.md)
 - [OSWorld Benchmark](benchmarks/osworld.md)
+- [ClawBench Benchmark](benchmarks/clawbench.md)
 
 ## Current Solutions
 
@@ -57,5 +59,4 @@ For detailed results and analysis, see the individual benchmark pages:
 * [n8n](open/n8n.md): Workflow automation platform with extensive integration options
 * [OpenAdapt](open/openadapt.md): Generative process automation framework
 * [OpenHands](open/openhands.md): AI-powered software development platform
-
 
