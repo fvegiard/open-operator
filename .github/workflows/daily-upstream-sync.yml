@@ -1,0 +1,30 @@
+name: Daily upstream sync
+
+on:
+  schedule:
+    - cron: '23 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository_owner == 'fvegiard'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Merge upstream without discarding fork changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          SYNC_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          gh api --method POST "repos/$GH_REPO/merge-upstream" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            -f branch="$SYNC_BRANCH"
